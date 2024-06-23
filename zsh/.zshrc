@@ -1,6 +1,6 @@
 # User configuration
 
-export PATH="~/.local/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 
 export LANG="en_US.UTF-8"
 
@@ -11,7 +11,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # pipx
-export PATH="$PATH:/Users/safecorners/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/versions/3.11.8/bin/python"
 
 # rbenv
