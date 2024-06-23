@@ -2,6 +2,8 @@
 
 export PATH="~/.local/bin:/usr/local/bin:$PATH"
 
+export LANG="en_US.UTF-8"
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
@@ -12,15 +14,20 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$PATH:/Users/safecorners/.local/bin"
 export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/versions/3.11.8/bin/python"
 
+# rbenv
+eval "$(rbenv init - zsh)"
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 # gmake
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
 # dotnet
 export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
+export MONO_GAC_PREFIX="/opt/homebrew"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -126,4 +133,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias kvim='NVIM_APPNAME="nvim-kickstart" nvim'
+alias mvim='NVIM_APPNAME="nvim-kickstart-modular" nvim'
 eval "$(starship init zsh)"
